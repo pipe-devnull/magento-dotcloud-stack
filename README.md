@@ -17,11 +17,11 @@ Default values:
 The Magento CLI installer is ran with a set of default values listed below
 
 
-Admin username - admin
-Admin password - test123
-locale		   - en_GB
-timezone       - Europe/London
-currency       - GBP
+* Admin username - admin 
+* Admin password - test123 
+* locale		   - en_GB
+* timezone       - Europe/London
+* currency       - GBP
 
 
 Todo

@@ -24,7 +24,6 @@ if (file_exists($environment_variables_path))
  */
 function create_database($environment_variables, $db_name)
 {
-    echo "Host: " . $environment_variables->DOTCLOUD_DB_MYSQL_HOST . "\n";
 
     $host       = $environment_variables->DOTCLOUD_DB_MYSQL_HOST;
     $password   = $environment_variables->DOTCLOUD_DB_MYSQL_PASSWORD;
@@ -33,8 +32,11 @@ function create_database($environment_variables, $db_name)
 
     $dsn = "mysql:host=" . $host . ";port=" . $port;
 
+    echo "Host: " . $dsn . "\n";
+
     try
-    {   
+    {
+        sleep(5);
         $dbh = new PDO($dsn, $user, $password);
         $dbh->exec("CREATE DATABASE IF NOT EXISTS " . $db_name) or die("PDO Error creating DB");
     } 
