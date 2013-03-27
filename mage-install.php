@@ -36,9 +36,10 @@ function create_database($environment_variables, $db_name)
 
     try
     {
-        sleep(5);
         $dbh = new PDO($dsn, $user, $password);
         $dbh->exec("CREATE DATABASE IF NOT EXISTS " . $db_name) or die("PDO Error creating DB");
+        echo "created .... but snoozing for 10 ...";
+        sleep(10);
     } 
     catch (Exception $e)
     {
